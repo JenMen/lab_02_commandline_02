@@ -13,82 +13,82 @@ Feel free to use your workstation to test your answers to the questions that don
 ==========
 1. Write the command that you would use to change to the root directory.
 ----------
-
+cd /
 
 
 ==========
 2. Write the command that you would use to change to your home directory.
 ----------
-
+cd ~
 
 
 ==========
 3. Write the command that you would use to change to your Desktop folder.
 ----------
-
+cd ~/Desktop
 
 
 ==========
 4. What's the absolute path to your home directory?
 ----------
-
+cd /Users/student
 
 
 ==========
 5. What's the absolute path to your Desktop directory?
 ----------
-
+cd /Users/student/Desktop
 
 
 ==========
 6. What's the absolute path to your Desktop directory?
 ----------
-
+cd Users/student/Desktop
 
 
 ==========
 7. If you're in your home directory, what's the relative path to your Desktop directory?
 ----------
-
+cd Desktop
 
 ==========
 8. If you're in your home directory, how would you create a new directory on your desktop called stuff without changing your directory?  Write your command below.
 ----------
-
+ent-v321-005:~ student$ mkdir -p Desktop/stuff
 
 
 ==========
 9. If you're in your root directory, how would you create a new directory on your desktop called more-stuff without changing your directory?  Write your command below.
 ----------
-
+ent-v321-005:Desktop student$ mkdir -p Desktop/more-stuff
 
 
 ==========
 10. If you're in your Desktop directory, how would you create a new directory on your desktop called even-more-stuff?  Write your command below.
 ----------
-
+ent-v321-005:Desktop student$ mkdir even-more-stuff
 
 
 ==========
 11. If you're in your home directory, how would you change to the directory right above it using a relative path (it should bring you to /Users)?  Write your command below.
 ----------
-
+cd ..
 
 
 ==========
 12. If you're in your Desktop directory, how would you change to two directories right above it (again, this should be /Users) using a relative path?  Write your command below.
 ----------
-
+cd ../..
 
 
 ==========
 13. What's the shortcut for changing to the directory that you were just previously in?  For example, if I were in /Volumes... and I changed to /Users/profesor/Desktop, what's a quick way of changing to /Volumes without writing something like cd /Volumes?
 ----------
-
+cd -
 ==========
 14. How would you show all of the files (including hidden ones) with detailed (long) information that are on you're Desktop if you're in your home directory?  Write your command below.
 ----------
-
+ent-v321-005:~ student$ ls -p -al Desktop
 ==========
 Optional Challenge:
 
@@ -100,3 +100,77 @@ e. Determine which folder in my-stuff was created most recently by using ls.  (t
 f. Remove that folder.
 g. Show all of the commands that you used to complete the above exercise.  (for example, how did you determine which folder in my-stuff was the most recent?).  Use the command: history ... to help you remember what you did!  Paste the commands below.
 ----------
+ent-v321-005:Desktop student$ mkdir my-stuff
+ent-v321-005:Desktop student$ pwd
+/Users/student/Desktop
+ent-v321-005:Desktop student$ ls
+Desktop			Temporary Student Work	my-stuff
+Sound Effects Server	even-more-stuff		stuff
+ent-v321-005:Desktop student$ pwd
+/Users/student/Desktop
+ent-v321-005:Desktop student$ ls
+Desktop			Temporary Student Work	my-stuff
+Sound Effects Server	even-more-stuff		stuff
+ent-v321-005:Desktop student$ cd my-stuff
+ent-v321-005:my-stuff student$ pwd
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ mkdir archived/current
+mkdir: archived: No such file or directory
+ent-v321-005:my-stuff student$ mkdir archived
+ent-v321-005:my-stuff student$ pwd
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ ls
+archived
+ent-v321-005:my-stuff student$ pwd
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ mkdir current
+ent-v321-005:my-stuff student$ pwd
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ ls
+archived	current
+ent-v321-005:my-stuff student$ hostname
+ent-v321-005.local
+ent-v321-005:my-stuff student$ pwd
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ mkdir local
+ent-v321-005:my-stuff student$ ls
+archived	current		local
+ent-v321-005:my-stuff student$ ls -a
+.		..		archived	current		local
+ent-v321-005:my-stuff student$ ls -l
+total 0
+drwxr-xr-x  2 student  staff  68 Feb  9 19:27 archived
+drwxr-xr-x  2 student  staff  68 Feb  9 19:28 current
+drwxr-xr-x  2 student  staff  68 Feb  9 19:29 local
+ent-v321-005:my-stuff student$ cd
+ent-v321-005:~ student$ pwd
+/Users/student
+ent-v321-005:~ student$ cd -
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ cd -
+/Users/student
+ent-v321-005:~ student$ cd -
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ cd ..
+ent-v321-005:Desktop student$ pwd
+/Users/student/Desktop
+ent-v321-005:Desktop student$ rmdir my-stuff
+rmdir: my-stuff: Directory not empty
+ent-v321-005:Desktop student$ pwd
+/Users/student/Desktop
+ent-v321-005:Desktop student$ cd my-stuff
+ent-v321-005:my-stuff student$ pwd
+/Users/student/Desktop/my-stuff
+ent-v321-005:my-stuff student$ rmdir archived
+ent-v321-005:my-stuff student$ ls
+current	local
+ent-v321-005:my-stuff student$ rmdir local
+ent-v321-005:my-stuff student$ rmdir current
+ent-v321-005:my-stuff student$ ls
+ent-v321-005:my-stuff student$ cd -
+/Users/student/Desktop
+ent-v321-005:Desktop student$ rmdir my-stuff
+ent-v321-005:Desktop student$ ls
+Desktop			Temporary Student Work	stuff
+Sound Effects Server	even-more-stuff
+ent-v321-005:Desktop student$ 
